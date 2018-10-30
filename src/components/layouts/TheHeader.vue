@@ -21,19 +21,28 @@
             <a href="#" @click="changeNavIndex(index)">{{ item }}</a>
           </li>
         </ul>
+        <div class="navbar-right">
+            <the-entry></the-entry>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import TheEntry from './TheEntry'
+
+
 export default {
   name: 'TheHeader',
+  components: {
+        TheEntry
+    },
   data() {
     return {
       logo: {
-        src: `${this.uploadsUrl}sites/ByvFbNlQYVwhvTyBgLdqitchoacDNznN.jpg`,
-        title: 'VuejsCaff'
+        src: `${this.uploadsUrl}sites/.jpg`,
+        title: 'Caff'
       },
       navList: ['Communitis', 'News', 'Questions', 'Tutorials'],
       activeNavIndex: 0,
@@ -41,7 +50,7 @@ export default {
     }
   },
   beforeCreate() {
-    this.uploadsUrl = 'https://vuejscaffcdn.phphub.org/uploads/'
+    this.uploadsUrl = ''
   },
   methods:{
       changeNavIndex(index){
