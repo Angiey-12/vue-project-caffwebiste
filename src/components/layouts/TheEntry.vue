@@ -8,10 +8,18 @@
             <img v-if="user.avatar" :src="user.avatar" class="avatar-topnav">
             <span v-if="user.name">{{ user.name }}</span>
           </span>
-          <span v-else>佚名</span>
+          <span v-else>none</span>
           <span class="caret"></span>
         </a>
         <ul class="dropdown-menu">
+          <!--编辑资料-->
+          <li>
+            <router-link to="/users/1/edit">
+              <i class="fa fa-cog text-md i-middle"></i>
+              Edit File
+            </router-link>
+          </li>
+
           <li><a href="javascript:" @click="logout"><i class="fa fa-sign-out text-md"></i>Logout</a></li>
         </ul>
       </li>
